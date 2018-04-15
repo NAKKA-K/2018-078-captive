@@ -11,6 +11,9 @@ npm install
 # serve with hot reload at localhost:8080
 npm run dev
 
+# serve with hot reload at 0.0.0.0:8000 on vagrant
+npm run vag
+
 # build for production with minification
 npm run build
 ```
