@@ -2,7 +2,7 @@
   <div id="app">
     <img src="./assets/logo.png">
 
-    <form id="form" action="" method="POST">
+    <form id="form" @submit="formValidator" action="" method="POST">
       <p>
         <div class="error">{{ ageValidator }}</div>
         <label for="age" class="input-label">年齢:</label>
@@ -60,6 +60,14 @@ export default {
         return '';
       }
       return '性別を選択してください';
+    }
+  },
+  methods: {
+    formValidator: function(e) {
+      if(this.validation.age === false ||
+         this.validation.sex === false){
+        e.preventDefault();
+      }
     }
   }
 }
