@@ -5,7 +5,7 @@
     <form id="form" method="POST">
       <p>
         <label for="age" class="input-label">年齢:</label>
-        <input type="text" id="age" v-model="ans.age" class="input-row">
+        <input type="number" id="age" v-model="ans.age" class="input-row">
       </p>
       <p>
         <label for="sex" class="input-label">性別:</label>
