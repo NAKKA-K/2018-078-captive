@@ -67,6 +67,7 @@ export default {
       if(this.validation.age === false ||
          this.validation.sex === false){
         e.preventDefault();
+        alert('項目を正しく入力してください');
       }
     }
   }
