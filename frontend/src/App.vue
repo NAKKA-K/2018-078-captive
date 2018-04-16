@@ -14,7 +14,12 @@
       </p>
       <p>
         <label for="sex">性別:</label>
-        <input type="text" id="sex" v-model="ans.sex">
+        <select v-model="ans.sex" placeholder="性別">
+          <option value="">---</option>
+          <option value="男性">男性</option>
+          <option value="女性">女性</option>
+          <option value="その他">その他</option>
+        </select>
       </p>
 
       <input type="submit" value="送信">
