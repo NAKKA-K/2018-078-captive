@@ -2,12 +2,14 @@
   <div id="app">
     <img src="./assets/logo.png">
 
-    <form id="form" method="POST">
+    <form id="form" action="" method="POST">
       <p>
+        <div class="error">{{ ageValidator }}</div>
         <label for="age" class="input-label">年齢:</label>
         <input type="number" id="age" v-model="ans.age" class="input-row">
       </p>
       <p>
+        <div class="error">{{ sexValidator }}</div>
         <label for="sex" class="input-label">性別:</label>
         <select v-model="ans.sex" placeholder="性別" class="input-row">
           <option value="">---</option>
@@ -39,8 +41,25 @@ export default {
   },
   computed: {
     ageValidator:function() {
-      this.validation.age = !!this.ans.age;
-      return this.validation.age;
+      if(this.ans.age < 0 | 100 < this.ans.age){
+        this.validation.age = false;
+        return '0以上100以下で入力してください';
+      }else if(this.ans.age === ''){
+        this.validation.age = false;
+        return '年齢を入力してください';
+      }
+
+      this.validation.age = true;
+      return '';
+    },
+    sexValidator:function() {
+      if(this.ans.sex === '男性' ||
+         this.ans.sex === '女性' ||
+         this.ans.sex === 'その他'){
+        this.validation.sex = true;
+        return '';
+      }
+      return '性別を選択してください';
     }
   }
 }
@@ -63,5 +82,9 @@ export default {
 .input-row {
   width: 100px;
   height: 25px;
+}
+
+.error {
+  color: red;
 }
 </style>
