@@ -19,6 +19,7 @@ env.py
 
 # pyenv / pyenv-virtualenv
 .python-version
+myvenv/
 
 # Editor / IDE
 .vscode/
