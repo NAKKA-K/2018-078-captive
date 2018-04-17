@@ -8,3 +8,18 @@
 # アンケート項目
 - 年齢
 - 性別
+
+
+# REST API URL
+
+### アンケート登録(POST)
+
+```
+/api/questions/
+```
+
+### アンケート結果(GET)
+
+```
+/api/questions/
+```
