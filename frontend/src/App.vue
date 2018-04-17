@@ -21,10 +21,13 @@
 
       <input type="submit" value="送信">
     </form>
+
   </div>
 </template>
 
+
 <script>
+
 export default {
   name: 'app',
   data () {
@@ -36,7 +39,8 @@ export default {
       validation: {
         age: false,
         sex: false
-      }
+      },
+      baseUrl: 'http://127.0.0.1'
     }
   },
   computed: {
@@ -69,6 +73,13 @@ export default {
         e.preventDefault();
         alert('項目を正しく入力してください');
       }
+
+      e.preventDefault();
+      this.$http.post(this.baseUrl + '/api/questions/', this.ans).then(response => {
+        console.log('success');
+      }, response => {
+        console.log('faild');
+      });
     }
   }
 }
