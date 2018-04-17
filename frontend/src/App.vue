@@ -9,9 +9,9 @@
         <input type="number" id="age" v-model="ans.age" class="input-row">
       </p>
       <p>
-        <div class="error">{{ sexValidator }}</div>
-        <label for="sex" class="input-label">性別:</label>
-        <select v-model="ans.sex" placeholder="性別" class="input-row">
+        <div class="error">{{ genderValidator }}</div>
+        <label for="gender" class="input-label">性別:</label>
+        <select v-model="ans.gender" placeholder="性別" class="input-row">
           <option value="">---</option>
           <option value="男性">男性</option>
           <option value="女性">女性</option>
@@ -34,13 +34,13 @@ export default {
     return {
       ans: {
         age: '',
-        sex: '',
+        gender: '',
       },
       validation: {
         age: false,
-        sex: false
+        gender: false
       },
-      baseUrl: 'http://127.0.0.1'
+      baseUrl: 'http://127.0.0.1:8080'
     }
   },
   computed: {
@@ -56,11 +56,11 @@ export default {
       this.validation.age = true;
       return '';
     },
-    sexValidator:function() {
-      if(this.ans.sex === '男性' ||
-         this.ans.sex === '女性' ||
-         this.ans.sex === 'その他'){
-        this.validation.sex = true;
+    genderValidator:function() {
+      if(this.ans.gender === '男性' ||
+         this.ans.gender === '女性' ||
+         this.ans.gender === 'その他'){
+        this.validation.gender = true;
         return '';
       }
       return '性別を選択してください';
@@ -69,13 +69,14 @@ export default {
   methods: {
     formValidator: function(e) {
       if(this.validation.age === false ||
-         this.validation.sex === false){
+         this.validation.gender === false){
         e.preventDefault();
         alert('項目を正しく入力してください');
       }
 
       e.preventDefault();
-      this.$http.post(this.baseUrl + '/api/questions/', this.ans).then(response => {
+      console.log(this.ans)
+      this.$http.post(this.baseUrl + '', this.ans).then(response => {
         console.log('success');
       }, response => {
         console.log('faild');
