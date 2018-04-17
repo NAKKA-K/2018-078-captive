@@ -11,7 +11,8 @@
     "vag": "cross-env NODE_ENV=development webpack-dev-server --hot --host 0.0.0.0 --port 8000"
   },
   "dependencies": {
-    "vue": "^2.5.11"
+    "vue": "^2.5.11",
+    "vue-resource": "^1.5.0"
   },
   "browserslist": [
     "> 1%",
