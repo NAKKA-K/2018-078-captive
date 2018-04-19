@@ -23,3 +23,6 @@ myvenv/
 
 # Editor / IDE
 .vscode/
+
+# pylint
+.pylintrc
