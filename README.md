@@ -21,5 +21,5 @@ localhost:8080/
 ### アンケート結果(GET)
 
 ```
-localhost:8000/
+localhost:8080/
 ```
