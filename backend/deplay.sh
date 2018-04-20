@@ -24,3 +24,6 @@ sudo ln -s /etc/nginx/sites-available/078-captive.conf /etc/nginx/sites-enabled
 
 # Deploy backend
 cp -r ../backend/ ~/
+
+# PostgreSQL
+sudo apt install libpq-dev postgresql postgresql-contrib
