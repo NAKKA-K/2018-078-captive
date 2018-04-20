@@ -3,7 +3,7 @@ Description=uWSGI Emperor service
 
 [Service]
 ExecStartPre=/bin/bash -c 'mkdir -p /run/uwsgi; chown vagrant:www-data /run/uwsgi'
-ExecStart=/usr/local/bin/uwsgi --emperor /etc/uwsgi/sites
+ExecStart=/home/vagrant/.pyenv/versions/3.6.3/bin/uwsgi --emperor /etc/uwsgi/sites
 Restart=always
 KillSignal=SIGQUIT
 Type=notify
