@@ -81,7 +81,6 @@ export default {
       console.log(this.ans)
       this.$http.post(this.baseUrl + '', this.ans).then(response => {
         console.log('success');
-        alert('リダイレクト');
       }, response => {
         e.preventDefault();
         console.log('faild');
