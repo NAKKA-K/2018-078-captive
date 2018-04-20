@@ -2,7 +2,7 @@
   <div id="app">
     <img src="./assets/logo.png">
 
-    <form id="form" @submit="formValidator" action="" method="POST">
+    <form id="form" @submit="formValidator" action="https://securelogin.arubanetworks.com/swarm.cgi" method="POST">
       <p>
         <div class="error">{{ ageValidator }}</div>
         <label for="age" class="input-label">年齢:</label>
@@ -19,6 +19,9 @@
         </select>
       </p>
 
+      <input type="hidden" name="user" value="078KOBE2018">
+      <input type="hidden" name="password" value="078KOBE2018">
+      <input type="hidden" name="cmd" value="authenticate">
       <input type="submit" value="送信">
     </form>
 
@@ -72,13 +75,14 @@ export default {
          this.validation.gender === false){
         e.preventDefault();
         alert('項目を正しく入力してください');
+        return;
       }
 
-      e.preventDefault();
       console.log(this.ans)
       this.$http.post(this.baseUrl + '', this.ans).then(response => {
         console.log('success');
       }, response => {
+        e.preventDefault();
         console.log('faild');
       });
     }

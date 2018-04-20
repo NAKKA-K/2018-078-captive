@@ -15,11 +15,11 @@
 ### アンケート登録(POST)
 
 ```
-/api/questions/
+localhost:8080/
 ```
 
 ### アンケート結果(GET)
 
 ```
-/api/questions/
+localhost:8080/
 ```
