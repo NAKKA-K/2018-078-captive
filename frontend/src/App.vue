@@ -5,7 +5,7 @@
     <form id="form" @submit="formValidator" action="https://securelogin.arubanetworks.com/swarm.cgi" method="POST">
       <p>
         <div class="error">{{ ageValidator }}</div>
-        <label for="age" class="input-label">年齢:</label>
+        <label for="age" class="input-label">年齢{{ $t('form.age')}}:</label>
         <input type="number" id="age" v-model="ans.age" class="input-row">
       </p>
       <p>
@@ -45,6 +45,15 @@ export default {
       },
       baseUrl: 'http://127.0.0.1:8080'
     }
+  },
+  created: function() {
+    var language = (window.navigator.userLanguage ||
+                    window.navigator.language ||
+                    window.navigator.browserLanguage
+                   ).substr(0, 2) === "ja" ? "ja" : "en";
+    console.log(this.i18n);
+    $i18n.locale = language;
+    console.log(language)
   },
   computed: {
     ageValidator:function() {
