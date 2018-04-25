@@ -1,0 +1,26 @@
+{
+  "ja": {
+    "form": {
+      "age": "年齢",
+      "sex": "性別"
+    },
+    "error": {
+      "overAge": "0以上100以下で入力してください",
+      "noneAge": "年齢を入力してください",
+      "noneSex": "性別を入力してください",
+      "invalidForm": "項目を正しく入力してください"
+    }
+  },
+  "en": {
+    "form": {
+      "age": "age",
+      "sex": "sex"
+    },
+    "error": {
+      "overAge": "Input 0 < age <= 100",
+      "noneAge": "Input age column",
+      "noneSex": "Input sex column",
+      "invalidForm": "Invalid form"
+    }
+  }
+}
