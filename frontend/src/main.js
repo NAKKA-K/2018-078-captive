@@ -9,7 +9,7 @@ Vue.use(VueI18n)
 
 const data = require('./i18n/messages.json')
 const i18n = new VueI18n({
-  locale: 'ja',
+  locale: 'en',
   messages: data
 })
 
