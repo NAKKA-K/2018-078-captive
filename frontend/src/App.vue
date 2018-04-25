@@ -5,24 +5,24 @@
     <form id="form" @submit="formValidator" action="https://securelogin.arubanetworks.com/swarm.cgi" method="POST">
       <p>
         <div class="error">{{ ageValidator }}</div>
-        <label for="age" class="input-label">年齢:</label>
+        <label for="age" class="input-label">{{ $t('form.age') }}:</label>
         <input type="number" id="age" v-model="ans.age" class="input-row">
       </p>
       <p>
         <div class="error">{{ genderValidator }}</div>
-        <label for="gender" class="input-label">性別:</label>
-        <select v-model="ans.gender" placeholder="性別" class="input-row">
+        <label for="gender" class="input-label">{{ $t('form.sex') }}:</label>
+        <select v-model="ans.gender" placeholder="Sex" class="input-row">
           <option value="">---</option>
-          <option value="男性">男性</option>
-          <option value="女性">女性</option>
-          <option value="その他">その他</option>
+          <option value="男性">{{ $t('sex_select.male') }}</option>
+          <option value="女性">{{ $t('sex_select.female') }}</option>
+          <option value="その他">{{ $t('sex_select.other') }}</option>
         </select>
       </p>
 
       <input type="hidden" name="user" value="078KOBE2018">
       <input type="hidden" name="password" value="078KOBE2018">
       <input type="hidden" name="cmd" value="authenticate">
-      <input type="submit" value="送信">
+      <input type="submit" value="Submit">
     </form>
 
   </div>
@@ -51,16 +51,17 @@ export default {
                     window.navigator.language ||
                     window.navigator.browserLanguage
                    ).substr(0, 2) === "ja" ? "ja" : "en";
-    console.log(language);
+    this.$i18n.locale = language;
+    console.log(this.$i18n.locale);
   },
   computed: {
     ageValidator:function() {
       if(this.ans.age < 0 | 100 < this.ans.age){
         this.validation.age = false;
-        return '0以上100以下で入力してください';
+        return `${this.$t('error.overAge')}`;
       }else if(this.ans.age === ''){
         this.validation.age = false;
-        return '年齢を入力してください';
+        return `${this.$t('error.noneAge')}`;
       }
 
       this.validation.age = true;
@@ -73,7 +74,7 @@ export default {
         this.validation.gender = true;
         return '';
       }
-      return '性別を選択してください';
+      return `${this.$t('error.noneSex')}`;
     }
   },
   methods: {
@@ -81,7 +82,7 @@ export default {
       if(this.validation.age === false ||
          this.validation.gender === false){
         e.preventDefault();
-        alert('項目を正しく入力してください');
+        alert(`${this.$t('error.invalidForm')}`);
         return;
       }
 
