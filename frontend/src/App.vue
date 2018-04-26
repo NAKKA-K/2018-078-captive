@@ -104,8 +104,56 @@ export default {
                a. 収集・記録されたパケットは厳重に保管され、目的以外には使用しません。   
                b. また、個人が特定できる形での外部への公開などもいたしません。    
            6. 本利用規約は、オペレーターにより理由を問わず変更される場合があります。`
+      }else {
+        return `By connecting to this network, you agree to be bound by this Acceptable
+        Use Policy (AUP).
+        If you cannot agree to this policy, you must not connect to the This
+        HotSpot wireless network.
+        In the text below, the terms USER and CUSTOMER refer to a user of the This
+        HotSpot wireless network and the term SERVICE refers to the This HotSpot
+        wireless network and associated services.
+        The term OPERATOR refers to the volunteer operators of This HotSpot, and
+        the sponsors who have contributed to the network.
+        Acceptable Use Policy
+          1. By agreeing to this AUP, USERS of this HotSpot accept that the SERVICE is provided by
+             unpaid volunteers, who all have other "day jobs". This means that we cannot provide 24x7
+             support or monitoring of the SERVICE. Any problems will be any dealt with as soon as we
+             have time to spare.
+          2. The OPERATORS will do their utmost to provide a reliable, stable service. However, USERS
+             of the SERVICE accept that:
+                a. The SERVICE may become unavailable at any time, and without notice. If this
+                   happens, we will endeavor to restore the SERVICE as soon as we can.
+                b. The OPERATORS cannot take any responsibility for any user data traversing the
+                   SERVICE. We cannot guarantee that your data will not become lost, damaged, or
+                   intercepted in transit. We cannot take responsibility if you lose an email or a
+                   download or any other kind of transmission, or if someone gains access to your
+                   passwords, or for any other like circumstances.
+                c. Security of the USER'S equipment and data is not the responsibility of the
+                   OPERATORS. It is the USER'S responsibility to safeguard against the risks of
+                   hacking, viruses, eavesdropping, and all other such hazards. The OPERATORS are
+                   not liable for any kind of loss or damage whatsoever.
+          3. This HotSpot is provided by the community, for the community. As such, it is necessary to use
+             the SERVICE in a "community-minded" manner. In order to provide a "fair" service for
+             everyone, the OPERATORS reserve the right to:
+                a. Bar access to the SERVICE to anyone who is deemed to be in breach of this AUP, or
+                   is behaving in an unsociable manner (for example by consuming all available
+                   bandwidth for themselves), or for any other reason.
+                b. Block access to any network protocols that are deemed inappropriate or may
+                   contravene Moving-Edge's AUP. Such network protocols include but are not limited to
+                   those used by filesharing applications such as KaZaA, eDonkey, and Napster.
+                c. Apply any such traffic shaping as is deemed necessary to provide the SERVICE in a
+                   fair and stable manner.
+          4. USERS of the SERVICE agree to keep their activities legal and in good taste. USERS are
+             forbidden to use the SERVICE for the transfer of copyrighted or offensive materials, or any
+             other such articles.
+          5. For research and operators' technical improvements, a part or all of the packets passing
+             through this network are collected and recorded without personally identifiable.
+                a. The recorded data are stored strictly and not used for other than for intended
+                   purposes.
+                b. In addition, those are not disclosed in the personally identifiable form.
+          6. The OPERATORS reserve the right to alter the terms and conditions stated in this document
+             at any time and for any reason.`
       }
-      return `${this.$t('service.terms')}`;
     }
   },
   methods: {
@@ -161,5 +209,6 @@ export default {
   margin: 100px auto;
   overflow: auto;
   white-space:pre;
+  border: 1px solid;
 }
 </style>
