@@ -15,7 +15,7 @@ local_settings.py
 
 # [WARNING] Secret keys file
 env.py
-
+.env
 
 # pyenv / pyenv-virtualenv
 .python-version
@@ -23,3 +23,8 @@ myvenv/
 
 # Editor / IDE
 .vscode/
+
+# pylint
+.DS_Store
+.pylintrc
+.DS_Store
