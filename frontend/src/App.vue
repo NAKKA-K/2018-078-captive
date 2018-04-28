@@ -58,6 +58,9 @@ export default {
                    ).substr(0, 2) === "ja" ? "ja" : "en";
     this.$i18n.locale = language;
     console.log(this.$i18n.locale);
+
+    baseUrl = (location.href.substr(0, 6) === "10.200" ? "10.200.0.226" : "10.100.0.225") + ":8080";
+
   },
   computed: {
     ageValidator:function() {
